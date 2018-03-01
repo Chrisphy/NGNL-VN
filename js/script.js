@@ -27,7 +27,7 @@ let messages = {
 let notifications = {
 	"Welcome": {
 		title: "Welcome",
-		body: "This is the Monogatari VN Engine",
+		body: "This is the NGNL VN",
 		icon: ""
 	}
 };
@@ -39,12 +39,13 @@ let particles = {
 
 // Define the music used in the game.
 const music = {
+	"StationMusic": "station.mp3",
 
 };
 
 // Define the voice files used in the game.
 const voice = {
-
+	"c1":"c1.mp3",
 };
 
 // Define the sounds used in the game.
@@ -66,7 +67,7 @@ const images = {
 const scenes = {
 	 
 		"station": "station.jpg",
-	
+		"gameover":"gameover.jpg",
 
 };
 
@@ -161,6 +162,27 @@ const characters = {
             "Happy": "KG080002.kg.png"
         },
 	},
+
+	"guccitofu": {
+		"Name": "Guccitofu",
+		"Color": "pink",
+		"Directory": "Guccitofu", // Optional*
+        "Images":{ // Images Identifier for the "Show" statement.
+			"Normal": "立ち絵5_1.png",
+			"Mad": "立ち絵5_2.png  ",
+			"Doubt": "立ち絵5_4.png",
+            "Happy": "立ち絵5_3.png"
+        },
+	},
+
+	"charlie": {
+		"Name": "Charlie",
+		"Color": "yellow",
+		"Directory": "Charlie", // Optional*
+        "Images":{ // Images Identifier for the "Show" statement.
+			"Normal": "pikachu.png",
+        },
+	},
 };
 
 let script = {
@@ -180,6 +202,7 @@ let script = {
 				"Warning": "You must enter a name!"
 			}
 		},
+		"play music StationMusic loop",
 		"scene station with fadeIn",
 		"show m Happy",
 
@@ -248,6 +271,31 @@ let script = {
 		"hide cadu",
 		"show yami Doubt",
 		"yami Who are these weirdos...",
+		"hide yami",
+		"show jassu Normal",
+		"jassu Aren't you a weirdo too Yami?",
+		"show yami Mad right",
+		"yami N-no!!",
+		"hide jassu",
+		"hide yami",
+		"show guccitofu Mad",
+		"guccitofu I can't believe you guys forgot about me!!!",
+		"show m Happy left",
+		"m Oh look it's the side char Gucci",
+		"guccitofu I'm not a side char!!! T_T Miyu stop this abuse!",
+		"hide m",
+		"hide guccitofu",
+		"show D3 Doubt",
+		"D3 Who is this guy again?",
+		"hide D3",
+		"show charlie Normal",
+		"charlie Watashi is a pokemon desu~",
+		"show guccitofu Doubt right",
+		"guccitofu Stop acting cute charlie",
+		"play voice c1",
+		"charlie Omae wa mou shindeiru.",
+		"scene gameover with fadeIn",
+		"{{player.Name}} ...Is that it..?",
 		"end"
 	],
 
